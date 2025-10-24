@@ -1,14 +1,12 @@
 def get_dimensions(matrix):
     if not matrix:
-        return 0, 0
+        return 1,0
     return len(matrix), len(matrix[0])
 
 def print_matrix(matrix):
     if not matrix:
         print("[]")
         return
-        
-    max_widths = [len(f"{row[j]:g}") for row in matrix for j in range(len(matrix[0]))]
     
     col_widths = [0] * len(matrix[0])
     for row in matrix:
@@ -24,6 +22,7 @@ def print_matrix(matrix):
         print()
     print("-" * width)
 
+    
 def matrix_add(A, B):
     rows_A, cols_A = get_dimensions(A)
     rows_B, cols_B = get_dimensions(B)
